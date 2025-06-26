@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Karnvir Sangha, A01278001 -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hangman Game</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <script src="../js/game.js" defer></script>
+</head>
+
+<body>
+
+  <div class="game-model">
+    <div class="content">
+      <img src="../images/you-lose.jpg" alt="game over" class="result-img">
+      <h4>Game Over!</h4>
+      <p>The correct word was: <b></b></p>
+      <button class="play-again">play again</button>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="game-container">
+      <div class="hangman-box">
+        <h1>COMP 2132 HANGMAN</h1>
+        <img src="../images/hangman-0.svg" alt="hangman">
+      </div>
+
+      <div class="game-box">
+        <ul class="word-display">
+        </ul>
+
+        <h4 class="hint-text">
+          Hint: <b>hint</b>
+        </h4>
+
+        <h4 class="guesses-text">
+          Incorrect guess: <b>0 / 6</b>
+        </h4>
+
+        <div class="keyboard"></div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© Copyleft 20** - COMP2132</p>
+    </footer>
+  </div>
+
+</body>
+</html>

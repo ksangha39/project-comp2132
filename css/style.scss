@@ -1,0 +1,206 @@
+$color_1: white;
+$color_2: red;
+$color_3: #000000;
+$color_4: green;
+$color_5: rgb(1, 173, 1);
+$font-family_1: "Roboto", sans-serif;
+$background-color_1: rgb(53, 5, 1);
+$background-color_2: rgb(8, 24, 5);
+$border-color_1: transparent;
+
+/* Karnvir Sangha, A01278001  */
+
+
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-family: $font-family_1;
+	background: #fff;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background: #9e9e9e;
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	border: 5px solid black;
+	background: #9e9e9e;
+}
+li {
+	list-style-type: none;
+}
+footer {
+	margin-top: auto;
+	background-color: $background-color_1;
+	color: $color_1;
+	text-align: center;
+	padding: 15px 5px;
+}
+.hangman-box {
+	text-align: center;
+	img {
+		max-width: 270px;
+	}
+	h1 {
+		font-size: 1.4rem;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+}
+.word-display {
+	display: flex;
+	gap: 8px;
+	margin-top: 50px;
+	margin-bottom: 30px;
+	align-items: center;
+	justify-content: center;
+	.letter {
+		width: 25px;
+		border-bottom: 2px solid #000;
+		font-size: 2rem;
+		text-align: center;
+	}
+	.letter.guessed {
+		border-color: $border-color_1;
+		margin: -20px 0 15px;
+	}
+}
+.game-box {
+	h4 {
+		text-align: center;
+		font-size: 1.1rem;
+		margin-bottom: 12px;
+	}
+	.guesses-text {
+		b {
+			color: $color_2;
+		}
+	}
+	.keyboard {
+		display: flex;
+		gap: 5px;
+		margin-top: 25px;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+.keyboard {
+	button {
+		color: $color_3;
+		font-size: 1rem;
+		font-weight: 500;
+		width: calc(100% / 9 - 5px);
+		padding: 5px;
+		border-radius: 3px;
+		cursor: pointer;
+		&:hover {
+			background: #9e9e9e;
+		}
+	}
+	padding: 10px;
+	background: #202020;
+	border-radius: 7px;
+	width: 90%;
+	margin: 2px auto;
+}
+.game-model {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0,0,0,0.6);
+	.content {
+		background: #fff;
+		max-width: 420px;
+		width: 100%;
+		padding: 50px;
+		align-items: center;
+		border-radius: 8px;
+		text-align: center;
+		p {
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-size: 1.1rem;
+		}
+	}
+	img {
+		max-width: 190px;
+	}
+	h4 {
+		font-size: 1.5rem;
+	}
+	p {
+		b {
+			color: $color_4;
+		}
+	}
+	button {
+		padding: 10px 20px;
+		font-size: 1.3rem;
+		margin-top: 10px;
+		&:hover {
+			color: $color_5;
+			background-color: $background-color_2;
+		}
+	}
+}
+.game-container {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+}
+@media (min-width: 768px) {
+	.game-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: 40px;
+	}
+	.hangman-box {
+		flex: 1;
+		text-align: center;
+		img {
+			max-width: 100%;
+		}
+	}
+	.game-box {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.keyboard {
+		justify-content: flex-start;
+	}
+	.word-display {
+		margin-top: 190px;
+	}
+}
